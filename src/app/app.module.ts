@@ -3,30 +3,28 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 /*import { HttpModule } from '@angular/http' ;*/
 import { RouterModule } from '@angular/router';
+import { FormControl, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
+import { MatAutocompleteModule }   from '@angular/material/autocomplete';
 
 
 import { AppComponent } from './app.component';
-import { MyComponentComponent } from './my-component/my-component.component';
-import { AllComponentComponent } from './all-component/all-component.component';
-import { AddItemComponent } from './add-item/add-item.component';
+import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyComponentComponent,
-    AllComponentComponent,
-    AddItemComponent
+     AutocompleteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,MatAutocompleteModule,
+    
     RouterModule.forRoot
     ([
-      {path: 'mine', component: MyComponentComponent },
-      {path: 'all', component: AllComponentComponent }
-
-      ],
+           ],
       {useHash: true})
 
   ],
